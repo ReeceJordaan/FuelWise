@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Location</title>
+  <script id="google-maps-api" async defer></script>
+  <script src="main.js" defer></script> <!-- Add this line to reference the JS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Random Location Viewer</h1>
+  <div id="map"></div>
+  <div class="input-container">
+    <div class="directions-container">
+      <div class="search-wrapper">
+        <div class="search-point start">
+          <div class="point-marker">
+            <div class="blue-dot"></div>
+          </div>
+          <input 
+            type="text" 
+            id="start-input" 
+            placeholder="Choose starting point"
+            autocomplete="off"
+          >
+        </div>
+        
+        <div class="search-point destination">
+          <div class="point-marker">
+            <div class="red-marker"></div>
+          </div>
+          <input 
+            type="text" 
+            id="destination-input" 
+            placeholder="Choose destination"
+            autocomplete="off"
+          >
+        </div>
+      </div>
+      
+      <button class="swap-button" onclick="swapLocations()">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path fill="currentColor" d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"/>
+        </svg>
+      </button>
+
+    <div id="autocomplete-results" class="autocomplete-items"></div>
+    </div>
+
+    <div class="route-info">
+      <h2>Route Information</h2>
+      <p>Distance: <span id="distance">N/A</span></p>
+      <p>Time: <span id="time">N/A</span></p>
+    </div>
+
+    <div class="button-group">
+      <button onclick="initMap()">Randomize</button>
+      <button onclick="showMyLocation()">My Location</button>
+      <button onclick="navigate()">Navigate</button>
+    </div>
+  </div>
+</body>
+</html>

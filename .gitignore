@@ -1,0 +1,26 @@
+# .gitignore
+
+# Ignore .env file that stores sensitive information
+.env
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore logs and temp files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore build and output directories (if applicable)
+dist/
+build/
+
+# Ignore IDE and editor files (optional, based on your setup)
+.idea/
+.vscode/
+*.swp
